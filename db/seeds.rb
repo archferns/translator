@@ -9,4 +9,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.create!(email: 'developer@example.com', password: 'password', confirmed_at: Time.zone.now)
-user.projects.create!(name: 'My project')
+project = user.projects.create!(name: 'My project')
+
+10.times do |index|
+  project.texts.create!(key: "key_#{index + 1}")
+end
