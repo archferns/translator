@@ -15,3 +15,4 @@ Layout/LineLength:
 Metrics/BlockLength:
   Exclude:
     - config/environments/development.rb
+    - spec/requests/projects_spec.rb
