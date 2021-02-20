@@ -12,5 +12,9 @@ user = User.create!(email: 'developer@example.com', password: 'password', confir
 project = user.projects.create!(name: 'My project')
 
 10.times do |index|
-  project.texts.create!(key: "key_#{index + 1}")
+  text = project.texts.create!(key: "key_#{index + 1}")
+  text.translations.create!([
+                              { locale: 'en', value: "Hello world #{index + 1}" },
+                              { locale: 'pt', value: "Olá mundo #{index + 1}" }
+                            ])
 end
