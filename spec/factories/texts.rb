@@ -2,6 +2,6 @@
 
 FactoryBot.define do
   factory :text do
-    key { 'hello_wold' }
+    key { 'hello_world' }
   end
 end

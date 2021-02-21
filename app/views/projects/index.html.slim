@@ -1,12 +1,12 @@
 .container.mx-auto.pt-10
-  .h1.text-3xl Listing projects
-  .flex.flex-col
-    - @projects.each do |project|
-      .border-b.border-gray-300.py-2.flex
-        .flex-grow.text-2xl= project.name
-        .self-center
-          = link_to 'Show', project, class: 'border border-gray-300 rounded-sm py-1 px-3 mr-2'
-          = link_to 'Edit', edit_project_path(project), class: 'border border-gray-300 rounded-sm py-1 px-3 mr-2'
-          = link_to 'Destroy', project, data: { confirm: 'Are you sure?' }, method: :delete, class: 'border border-gray-300 rounded-sm py-1 px-3'
+  h1.text-3xl.mb-3 Listing projects
+  - @projects.each do |project|
+    .border-b.border-gray-300.py-2.flex
+      .flex-grow.text-2xl= project.name
+      .self-center
+        = link_to 'Show', project, class: 'border border-gray-300 rounded-sm py-1 px-3 mr-2'
+        = link_to 'Texts', project_texts_path(project), class: 'border border-gray-300 rounded-sm py-1 px-3 mr-2'
+        = link_to 'Edit', edit_project_path(project), class: 'border border-gray-300 rounded-sm py-1 px-3 mr-2'
+        = link_to 'Destroy', project, data: { confirm: 'Are you sure?' }, method: :delete, class: 'border border-gray-300 rounded-sm py-1 px-3'
 
   = link_to 'New Project', new_project_path

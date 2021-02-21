@@ -45,6 +45,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name)
+    params.require(:project).permit(:name, texts_attributes: [:id, { translations_attributes: %i[id value] }])
   end
 end

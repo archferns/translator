@@ -1,0 +1,13 @@
+.container.mx-auto
+  h1.text-3xl.mb-3 Texts
+  .grid.grid-cols-3.border-b.border-gray-300.py-2
+    div Identifier
+    - @locales.each do |locale|
+      div= locale
+  = form_for @project do |f|
+    = f.fields_for :texts, @texts do |text|
+      .grid.grid-cols-3.py-2
+        .col-auto= text.object.key
+        = text.fields_for :translations do |translation|
+          .col-auto= translation.text_field :value, class: 'border border-gray-300 rounded-sm'
+    .actions= f.submit class: 'border border-gray-300 rounded-sm py-1 px-3 mr-2'
