@@ -7,3 +7,11 @@ Style/Documentation:
 
 AllCops:
   NewCops: enable
+
+Layout/LineLength:
+  Exclude:
+    - config/initializers/devise.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/development.rb
